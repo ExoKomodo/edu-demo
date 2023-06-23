@@ -13,10 +13,29 @@ git checkout -b ${BRANCH}
 # The syntax for calling a bash function is identical to calling CLI programs in bash
 update_branch_with_main ${BRANCH}
 
-touch ./setup.sh
-
+SCRIPT=./setup.sh
+touch ${SCRIPT}
 echo "#! /bin/bash
 echo 'Setting up local environment for Edu Demo'
 
 # NOTE: Add tool installations and such here. Say you need docker-compose to run the application locally, then this should install that for you." \
-    >> ./setup.sh
+    >> ${SCRIPT}
+
+SCRIPT=./build.sh
+touch ${SCRIPT}
+echo "#! /bin/bash
+echo 'Building Edu Demo'
+
+# NOTE: Add specific build command here" \
+    >> ${SCRIPT}
+
+SCRIPT=./run.sh
+touch ${SCRIPT}
+echo "#! /bin/bash
+echo 'Running Edu Demo'
+
+# Sometimes, your build and run are the same command.
+# In that case, use the build step as a "lint" or "validation" stage
+./build.sh
+# NOTE: Add specific run command here" \
+    >> ${SCRIPT}
