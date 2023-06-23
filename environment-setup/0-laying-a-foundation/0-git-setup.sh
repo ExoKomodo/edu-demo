@@ -24,4 +24,3 @@ git commit -m "Initial commit"
 # Any time you want to push a new branch, you run this command with the branch name you are pushing, while checked out in the branch you wish to push
 ADDITIONAL_ARGS="--set-upstream origin main"
 git push ${ADDITIONAL_ARGS}
-
