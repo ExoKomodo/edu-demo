@@ -5,7 +5,7 @@ set -euxo pipefail
 SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
 source ${SCRIPT_DIR}/funcs.sh
 
-BRANCH=setup
+BRANCH=${BRANCH:-setup}
 # Creates a new branch local on your computer
 git checkout -b ${BRANCH}
 
