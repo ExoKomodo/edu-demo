@@ -10,5 +10,5 @@ update_branch_with_main() {
     git checkout ${BRANCH}
     # Rebases your branch with PROD_BRANCH and force pushes the changes
     git rebase ${PROD_BRANCH}
-    git push -f
+    git push -f --set-upstream origin ${BRANCH}
 }
