@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup
+      run: ./client/scripts/setup.sh
+    - name: Build
+      run: ./client/scripts/build.sh
+    - name: Unit tests
+      run: ./client/scripts/unit-test.sh
+    - name: Integration tests
+      run: ./client/scripts/integration-test.sh
