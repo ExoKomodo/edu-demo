@@ -7,7 +7,13 @@
 # pipefail, which causes bad exit codes to fail the whole script when using a | operator. Bash usually silently ignores bad exit codes in pipe expressions, but this changes that behavior 
 set -euxo pipefail
 
-git init -b main
+SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
+
+# Imports the script as if you copy pasted it in place.
+# Allows you to use bash scripts as importable libraries.
+source ${SCRIPT_DIR}/funcs.sh
+
+git init -b ${PROD_BRANCH}
 git remote add origin git@github.com:ExoKomodo/edu-demo.git
 
 # Creates new file, if it does not exist
@@ -22,5 +28,5 @@ git commit -m "Initial commit"
 
 # This is the only time you must include any of the ADDITIONAL_ARGS for the main branch
 # Any time you want to push a new branch, you run this command with the branch name you are pushing, while checked out in the branch you wish to push
-ADDITIONAL_ARGS="--set-upstream origin main"
+ADDITIONAL_ARGS="--set-upstream origin ${PROD_BRANCH}"
 git push ${ADDITIONAL_ARGS}
