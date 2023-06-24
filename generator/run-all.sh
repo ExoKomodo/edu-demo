@@ -4,4 +4,4 @@ set -euxo pipefail
 
 SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
 
-${SCRIPT_DIR}/4-inspection/run-all.sh
+${SCRIPT_DIR}/3-hanging-walls/run-all.sh
