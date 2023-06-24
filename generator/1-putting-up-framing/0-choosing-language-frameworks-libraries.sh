@@ -6,7 +6,7 @@ echo "Setting up language, frameworks, and libraries"
 
 set -euxo pipefail
 
-source $(dirname ${BASH_SOURCE[0]})/funcs.sh
+source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
 echo "
 ## [Client](${CLIENT_DIR})

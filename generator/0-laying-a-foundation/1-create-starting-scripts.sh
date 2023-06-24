@@ -4,7 +4,7 @@ echo "Creating starting scripts"
 
 set -euxo pipefail
 
-source $(dirname ${BASH_SOURCE[0]})/funcs.sh
+source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
 BRANCH=${BRANCH:-setup}
 # NOTE: Creates a new branch local on your computer

@@ -17,7 +17,7 @@ set -euxo pipefail
 
 # NOTE: Imports the script as if you copy pasted it in place.
 # Allows you to use bash scripts as importable libraries.
-source $(dirname ${BASH_SOURCE[0]})/funcs.sh
+source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
 git init -b ${PROD_BRANCH}
 git remote add origin git@github.com:ExoKomodo/edu-demo.git

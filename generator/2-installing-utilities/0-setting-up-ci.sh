@@ -4,9 +4,8 @@ echo "Setting up CI"
 
 set -euxo pipefail
 
-source $(dirname ${BASH_SOURCE[0]})/funcs.sh
+source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
-WORKFLOW_DIR=./.github/workflows
 mkdir -p ${WORKFLOW_DIR}
 
 WORKFLOW_FILE=${WORKFLOW_DIR}/ci.yaml
