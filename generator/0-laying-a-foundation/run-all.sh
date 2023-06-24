@@ -2,9 +2,9 @@
 
 set -euxo pipefail
 
-SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
+CWD=$(dirname ${BASH_SOURCE[0]})
 
-source $(dirname ${BASH_SOURCE[0]})/lib.sh
+source ${CWD}/lib.sh
 
 BRANCH=${BRANCH:-setup}
 # NOTE: Creates a new branch local on your computer

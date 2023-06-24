@@ -2,9 +2,9 @@
 
 set -euxo pipefail
 
-SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
+CWD=$(dirname ${BASH_SOURCE[0]})
 
-${SCRIPT_DIR}/../0-laying-a-foundation/run-all.sh
+${CWD}/../0-laying-a-foundation/run-all.sh
 
 source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
@@ -38,7 +38,7 @@ nvm use ${NODE_VERSION}
 set -x
 
 rm -rf ${CLIENT_DIR}
-cp -r ./_client ${CLIENT_DIR}
+cp -r ${CWD}/_client ${CLIENT_DIR}
 
 cd ${CLIENT_DIR}
 npm install --package-lock-only

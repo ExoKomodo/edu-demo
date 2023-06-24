@@ -2,9 +2,9 @@
 
 set -euxo pipefail
 
-SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
+CWD=$(dirname ${BASH_SOURCE[0]})
 
-${SCRIPT_DIR}/../1-putting-up-framing/run-all.sh
+${CWD}/../1-putting-up-framing/run-all.sh
 
 source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
