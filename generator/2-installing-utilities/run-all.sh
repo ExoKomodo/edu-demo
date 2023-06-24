@@ -4,9 +4,9 @@ set -euxo pipefail
 
 SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]})
 
-source $(dirname ${BASH_SOURCE[0]})/lib.sh
-
 ${SCRIPT_DIR}/../1-putting-up-framing/run-all.sh
+
+source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
 echo "Setting up CI"
 
