@@ -42,35 +42,6 @@ cp -r ../templates/typescript-router-vitest-cypress/* ${CLIENT_DIR}
 rm -rf ../templates
 sed -i 's/pnpm/npm run/g' ${CLIENT_DIR}/README.md
 
-echo "# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-.DS_Store
-dist
-dist-ssr
-coverage
-*.local
-
-/cypress/videos/
-/cypress/screenshots/
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?" >> ${CLIENT_DIR}/.gitignore
-
 # NOTE: Like cd, but puts your current directory in a stack, and using popd
 # afterwards brings you back a layer in your directory stack
 
