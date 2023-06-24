@@ -39,9 +39,9 @@ set -x
 
 rm -rf ../templates
 git clone --depth=1 git@github.com:vuejs/create-vue-templates.git ../templates
-set +x
+set +e
 mv ../templates/typescript-router-vitest-cypress/{.,}* ${CLIENT_DIR}
-set -x
+set -e
 sed -i 's/pnpm/npm run/g' ${CLIENT_DIR}/README.md
 
 # NOTE: Like cd, but puts your current directory in a stack, and using popd
