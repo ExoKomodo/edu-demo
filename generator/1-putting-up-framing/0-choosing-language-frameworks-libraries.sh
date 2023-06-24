@@ -38,6 +38,7 @@ nvm use ${NODE_VERSION}
 set -x
 
 git clone --depth=1 git@github.com:vuejs/create-vue-templates.git ../templates
+rm -rf ${CLIENT_DIR}
 mv ../templates/typescript-router-vitest-cypress ${CLIENT_DIR}
 rm -rf ../templates
 sed -i 's/pnpm/npm run/g' ${CLIENT_DIR}/README.md
