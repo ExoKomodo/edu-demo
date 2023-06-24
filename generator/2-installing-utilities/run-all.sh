@@ -8,6 +8,8 @@ source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
 ${SCRIPT_DIR}/../1-putting-up-framing/run-all.sh
 
+echo "Setting up CI"
+
 mkdir -p ${WORKFLOW_DIR}
 
 WORKFLOW_FILE=${WORKFLOW_DIR}/ci.yaml
