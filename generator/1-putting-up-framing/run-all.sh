@@ -37,31 +37,7 @@ nvm install ${NODE_VERSION}
 nvm use ${NODE_VERSION}
 set -x
 
-rm -rf ../templates
-git clone --depth=1 git@github.com:vuejs/create-vue-templates.git ../templates
-set +e
-mv ../templates/typescript-router-vitest-cypress/{.,}* ${CLIENT_DIR}
-set -e
-sed -i 's/pnpm/npm run/g' ${CLIENT_DIR}/README.md
-
-# NOTE: Like cd, but puts your current directory in a stack, and using popd
-# afterwards brings you back a layer in your directory stack
-
-GET_CWD='$(dirname ${BASH_SOURCE[0]})/..'
-echo "cd ${GET_CWD}
-npm ci" >> ${SCRIPT_DIR}/setup.sh
-
-echo "cd ${GET_CWD}
-npm run dev" >> ${SCRIPT_DIR}/run.sh
-
-echo "cd ${GET_CWD}
-npm run build --if-present" >> ${SCRIPT_DIR}/build.sh
-
-echo "cd ${GET_CWD}
-npm run test:unit" >> ${SCRIPT_DIR}/unit-test.sh
-
-echo "cd ${GET_CWD}
-npm run test:e2e" >> ${SCRIPT_DIR}/integration-test.sh
+cp -r ./_client ${CLIENT_DIR}
 
 cd ${CLIENT_DIR}
 npm install --package-lock-only
