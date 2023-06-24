@@ -37,7 +37,8 @@ nvm install ${NODE_VERSION}
 nvm use ${NODE_VERSION}
 set -x
 
-cp ./_client ${CLIENT_DIR}
+rm -rf ${CLIENT_DIR}
+cp -r ./_client ${CLIENT_DIR}
 
 cd ${CLIENT_DIR}
 npm install --package-lock-only
