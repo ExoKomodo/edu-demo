@@ -8,4 +8,7 @@ ${CWD}/../2-installing-utilities/run-all.sh
 
 source $(dirname ${BASH_SOURCE[0]})/lib.sh
 
-# TODO: Copy paste community thigns like contributing.md, license, etc
+# TODO: Copy paste community things like contributing.md, license, etc
+
+cp ./docs/* ..
+cp -r ./.github/* ../.github/
